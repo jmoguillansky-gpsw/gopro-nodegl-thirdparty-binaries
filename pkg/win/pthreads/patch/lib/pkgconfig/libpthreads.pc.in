@@ -1,0 +1,10 @@
+prefix=%s
+exec_prefix=${prefix}
+libdir=${prefix}\\lib
+includedir=${prefix}\\include
+
+Name: libpthreads
+Description: Pthreads library
+Version: 0.0.0
+Libs: -L${libdir} -lpthreadVC3
+Cflags: -I${includedir}
