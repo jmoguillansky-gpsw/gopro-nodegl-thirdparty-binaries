@@ -12,4 +12,8 @@ jobs:
         run: |
             cd $GITHUB_WORKSPACE
             bash ./pkg/glext/sync.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: glext.h
+          path: /tmp/gopro-pkg/external/glext/gl/include/GL/glext.h
 
