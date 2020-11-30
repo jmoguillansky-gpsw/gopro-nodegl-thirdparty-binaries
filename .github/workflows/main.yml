@@ -11,5 +11,5 @@ jobs:
       - name: sync_glext
         run: |
             cd $GITHUB_WORKSPACE
-            ./pkg/glext/sync.sh
+            bash ./pkg/glext/sync.sh
 
