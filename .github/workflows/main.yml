@@ -24,4 +24,67 @@ jobs:
         with:
           name: khrplatform.h
           path: /tmp/gopro-pkg/external/khrplatform/gl/include/KHR/khrplatform.h
-
+      name: sync_nlohmann_json
+        run: |
+            cd $GITHUB_WORKSPACE
+            bash ./pkg/nlohmann_json/sync.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: nlohmann_json.hpp
+          path: /tmp/gopro-pkg/external/nlohmann_json/json/json.hpp
+      name: sync_stb_image
+        run: |
+            cd $GITHUB_WORKSPACE
+            bash ./pkg/stb_image/sync.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: stb_image.h
+          path: /tmp/gopro-pkg/external/stb_image/stb/stb_image.h
+      name: sync_win_d3dx12
+        run: |
+            cd $GITHUB_WORKSPACE
+            bash ./pkg/win/d3dx12/sync.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: d3dx12.h
+          path: /tmp/gopro-pkg/external/d3dx12/d3dx12/d3dx12.h
+      name: sync_win_ffmpeg
+        run: |
+            cd $GITHUB_WORKSPACE
+            bash ./pkg/win/ffmpeg/sync.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ffmpeg
+          path: /tmp/gopro-pkg/external/ffmpeg/ffmpeg_x64-windows
+      name: sync_win_glew
+        run: |
+            cd $GITHUB_WORKSPACE
+            bash ./pkg/win/glew/sync.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: glew
+          path: /tmp/gopro-pkg/external/glew/glew-2.1.0
+      name: sync_win_glfw
+        run: |
+            cd $GITHUB_WORKSPACE
+            bash ./pkg/win/glfw/sync.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: glfw
+          path: /tmp/gopro-pkg/external/glfw/glfw-3.3.2.bin.WIN64
+      name: sync_win_pthreads
+        run: |
+            cd $GITHUB_WORKSPACE
+            bash ./pkg/win/pthreads/sync.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: pthreads
+          path: /tmp/gopro-pkg/external/pthreads/pthreads_x64-windows
+      name: sync_win_wglext
+        run: |
+            cd $GITHUB_WORKSPACE
+            bash ./pkg/win/wglext/sync.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: wglext
+          path: /tmp/gopro-pkg/external/wglext/gl/include/GL/wglext.h
