@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  sync:
+  sync_all:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,4 +16,12 @@ jobs:
         with:
           name: glext.h
           path: /tmp/gopro-pkg/external/glext/gl/include/GL/glext.h
+      - name: sync_khrplatform
+        run: |
+            cd $GITHUB_WORKSPACE
+            bash ./pkg/khrplatform/sync.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: khrplatform.h
+          path: /tmp/gopro-pkg/external/khrplatform/gl/include/KHR/glext.h
 
