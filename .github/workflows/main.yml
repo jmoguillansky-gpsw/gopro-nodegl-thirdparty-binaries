@@ -24,7 +24,7 @@ jobs:
         with:
           name: khrplatform.h
           path: /tmp/gopro-pkg/external/khrplatform/gl/include/KHR/khrplatform.h
-      name: sync_nlohmann_json
+      - name: sync_nlohmann_json
         run: |
             cd $GITHUB_WORKSPACE
             bash ./pkg/nlohmann_json/sync.sh
