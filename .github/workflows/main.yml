@@ -23,5 +23,5 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: khrplatform.h
-          path: /tmp/gopro-pkg/external/khrplatform/gl/include/KHR/glext.h
+          path: /tmp/gopro-pkg/external/khrplatform/gl/include/KHR/khrplatform.h
 
