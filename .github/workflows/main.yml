@@ -32,7 +32,7 @@ jobs:
         with:
           name: nlohmann_json.hpp
           path: /tmp/gopro-pkg/external/nlohmann_json/json/json.hpp
-      name: sync_stb_image
+      - name: sync_stb_image
         run: |
             cd $GITHUB_WORKSPACE
             bash ./pkg/stb_image/sync.sh
@@ -40,7 +40,7 @@ jobs:
         with:
           name: stb_image.h
           path: /tmp/gopro-pkg/external/stb_image/stb/stb_image.h
-      name: sync_win_d3dx12
+      - name: sync_win_d3dx12
         run: |
             cd $GITHUB_WORKSPACE
             bash ./pkg/win/d3dx12/sync.sh
@@ -48,7 +48,7 @@ jobs:
         with:
           name: d3dx12.h
           path: /tmp/gopro-pkg/external/d3dx12/d3dx12/d3dx12.h
-      name: sync_win_ffmpeg
+      - name: sync_win_ffmpeg
         run: |
             cd $GITHUB_WORKSPACE
             bash ./pkg/win/ffmpeg/sync.sh
@@ -56,7 +56,7 @@ jobs:
         with:
           name: ffmpeg
           path: /tmp/gopro-pkg/external/ffmpeg/ffmpeg_x64-windows
-      name: sync_win_glew
+      - name: sync_win_glew
         run: |
             cd $GITHUB_WORKSPACE
             bash ./pkg/win/glew/sync.sh
@@ -64,7 +64,7 @@ jobs:
         with:
           name: glew
           path: /tmp/gopro-pkg/external/glew/glew-2.1.0
-      name: sync_win_glfw
+      - name: sync_win_glfw
         run: |
             cd $GITHUB_WORKSPACE
             bash ./pkg/win/glfw/sync.sh
@@ -72,7 +72,7 @@ jobs:
         with:
           name: glfw
           path: /tmp/gopro-pkg/external/glfw/glfw-3.3.2.bin.WIN64
-      name: sync_win_pthreads
+      - name: sync_win_pthreads
         run: |
             cd $GITHUB_WORKSPACE
             bash ./pkg/win/pthreads/sync.sh
@@ -80,7 +80,7 @@ jobs:
         with:
           name: pthreads
           path: /tmp/gopro-pkg/external/pthreads/pthreads_x64-windows
-      name: sync_win_wglext
+      - name: sync_win_wglext
         run: |
             cd $GITHUB_WORKSPACE
             bash ./pkg/win/wglext/sync.sh
