@@ -9,5 +9,6 @@ pushd $TMP_DIR/ffmpeg
 git clone -q https://git.ffmpeg.org/ffmpeg.git ffmpeg || true
 pushd ffmpeg
 ./configure --target-os=win64 --arch=x86_64 --toolchain=msvc --enable-shared --disable-x86asm
+make -j16
 popd
 popd
