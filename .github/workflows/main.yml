@@ -88,3 +88,11 @@ jobs:
         with:
           name: wglext
           path: /tmp/gopro-pkg/external/wglext/gl/include/GL/wglext.h
+      - name: sync_win_sdl2
+        run: |
+            cd $GITHUB_WORKSPACE
+            bash ./pkg/win/sdl2/sync.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: sdl2
+          path: /tmp/gopro-pkg/external/sdl2/sdl2_x64-windows
