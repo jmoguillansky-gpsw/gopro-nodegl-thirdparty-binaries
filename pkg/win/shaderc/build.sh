@@ -10,6 +10,7 @@ pushd shaderc
 ./utils/git-sync-deps
  #-DSHADERC_ENABLE_SHARED_CRT
 cmake.exe -H. -Bcmake-build-release -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 16 2019" && \
-cmake.exe --build cmake-build-release -j8 --config Release
+cmake.exe --build cmake-build-release -j8 --config Release && \
+cmake.exe --install cmake-build-release --prefix shaderc_x64-windows
 popd
 popd
