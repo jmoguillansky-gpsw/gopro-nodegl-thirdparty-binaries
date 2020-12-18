@@ -8,6 +8,7 @@ pushd $TMP_DIR/SPIRV-Cross
 git clone git@github.com:KhronosGroup/SPIRV-Cross.git
 pushd SPIRV-Cross
 cmake.exe -H. -Bcmake-build-release -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 16 2019" && \
-cmake.exe --build cmake-build-release -j8 --config Release
+cmake.exe --build cmake-build-release -j8 --config Release && \
+cmake.exe --install cmake-build-release --prefix spirv_cross_x64-windows
 popd
 popd
