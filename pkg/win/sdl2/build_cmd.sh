@@ -9,7 +9,6 @@ pushd $TMP_DIR/sdl2
 hg clone https://hg.libsdl.org/SDL SDL || true
 pushd SDL
 cmake.exe -H. -Bcmake-build-release -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 16 2019" && \
-cmake.exe --build cmake-build-release -j8 --config Release && \
-cd -
+cmake.exe --build cmake-build-release -j8 --config Release
 popd
 popd
