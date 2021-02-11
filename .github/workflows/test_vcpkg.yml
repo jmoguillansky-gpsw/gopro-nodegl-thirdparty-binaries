@@ -8,15 +8,27 @@ jobs:
 
     runs-on: windows-latest
 
-    steps:
-      - name: Install dependencies via vcpkg
-        uses: lukka/run-vcpkg@v6
-        with:
-          vcpkgGitCommitId: 595777db2332a3442b73f9af9f656355f207aec9
-          vcpkgTriplet: x64-windows
-          vcpkgArguments: pthreads sdl2
+    defaults:
+      run:
+        shell: wsl-bash {0}
 
-      - name: vcpkg integrate install
-        shell: cmd
+    steps:
+      - uses: Vampire/setup-wsl@v1
+        with:
+          distribution: Ubuntu-20.04
+
+      - name: Restore vcpkg binary cache archives
+        id: restore vcpkg binary cache archives
+        uses: actions/cache@v2
+        with:
+        path: C:\Users\runner\AppData\Local\vcpkg\archives
+        key: vcpkg-binary-cache
+        
+      - name: Install dependencies via vcpkg
         run: |
-          cd vcpkg && vcpkg.exe integrate install
+          git clone git@github.com:microsoft/vcpkg.git
+          git checkout 595777db2332a3442b73f9af9f656355f207aec9
+          cd vcpkg
+          ./bootstrap-vcpkg.exe
+          ./vcpkg.exe install shaderc:x64-windows
+
